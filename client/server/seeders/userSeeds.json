@@ -1,0 +1,28 @@
+[
+  {
+    "username": "purplewooper",
+    "name": "Tyler",
+    "email": "tyler@gmail.com",
+    "password": "password01",
+    "profileIMG": "https://cdnb.artstation.com/p/assets/images/images/042/281/341/large/alexandra-sevigny-woopyboi.jpg?1634068267",
+    "bio": "Hi! My name is Tyler, I'm a developer here at Palette Town :) I really hope you enjoy "
+  },
+  {
+    "username": "pikachu_fan3000",
+    "name": "Terri",
+    "email": "terri@gmail.com",
+    "password": "password02"
+  },
+  {
+    "username": "pokeLover",
+    "name": "Marley",
+    "email": "marley@gmail.com",
+    "password": "password03"
+  },
+  {
+    "username": "Torchic^2",
+    "name": "Jackie",
+    "email": "jackie@gmail.com",
+    "password": "password04"
+  }
+]

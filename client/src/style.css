@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* light mode below */
+  --primary-color: #AFD7CA;
+  --secondary-color: #4B957E;
+  --tertiary-color: #0B3C49;
+  --accent-color: #FFEC99;
+  /* dark mode below */
+  --primary-color-dark: #376D5B;
+  --secondary-color-dark: #1B362E;
+  --tertiary-color-dark: #030E12;
+}
+
+.wallpaper {
+  background-image: url('./assets/watercolor-bg-gold-updated.png');
+  background-size: cover;
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+}
+
+.topListing {
+  height: 30vh;
+}
+
+  /* Font for Whole Application */
+  .font-link {
+    font-family: 'Arvo';
+  }
+
+  /* Navbar Font Size/Styles */
+  .custom-navbar {
+    font-size: 20px;
+  }
+
+  .toggle label {
+    background-color: #777;
+    border: 2px solid #555;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    width: 100px;
+    height: 50px;
+  }
+  
+  .toggle label::after {
+    background-color: #555;
+    border-radius: 50%;
+    content: ' ';
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: all ease-in-out 0.3s;
+    width: 42px;
+    height: 42px;
+  }
+  
+  .toggle input[type=checkbox]:checked ~ label {
+    background-color: #00a0fc;
+    border-color: #006dc9;
+  }
+  
+  .toggle input[type=checkbox]:checked ~ label::after {
+    background-color: #0054B0;
+    transform: translateX(50px);
+  }
+  
+.banner-section {
+  background-image: url('./assets/banner-trial.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loginLogo {
+  background-image: url('./assets/yellow-cloud.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+
+/* refresh icon on marketplace */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.refresh-icon.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* input effects  */
+
+input[type='checkbox']:checked:after {
+  content: '\2713';
+  color: var(--primary-color);
+}
+
+input[type='checkbox']{
+  border: white 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  width: 20px !important;
+  height: 20px !important;
+  appearance:none;
+  border-radius:10%;
+  box-shadow: none;
+  font-size: 1em;
+}
+
+input[type='checkbox']:hover {
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  transition: transform 0.2s ease;
+  z-index: 1;
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  z-index: 2;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px rgba(75, 171, 255, 0.8);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

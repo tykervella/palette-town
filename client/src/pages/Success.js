@@ -10,7 +10,7 @@ import { GET_CART } from '../utils/queries';
 import { REMOVE_LISTING} from '../utils/mutations';
 
 
-const Checkout = () => {
+const Success= () => {
   const token = Auth.getToken();
   const username = token ? Auth.getProfile().data.username : null;
   const [cartItems, setCartItems] = useState([]);
@@ -79,4 +79,4 @@ const Checkout = () => {
   );
 }
 
-export default Checkout;
+export default Success;

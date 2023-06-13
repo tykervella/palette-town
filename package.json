@@ -1,5 +1,6 @@
 {
-  "name": "programming-thoughts",
+  "name": "palette-town",
+  "homepage":"https://palette-town.herokuapp.com/",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",

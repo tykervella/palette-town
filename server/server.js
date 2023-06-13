@@ -3,7 +3,7 @@ const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 require('dotenv').config();
-const cors = require('cors');
+
 
 
 const stripe = require('stripe')(process.env.SK_TEST_KEY);
@@ -23,8 +23,7 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Enable CORS
-app.use(cors());
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));

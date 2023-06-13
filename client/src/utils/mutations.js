@@ -205,6 +205,7 @@ mutation Mutation($listingId: ID!) {
 }
 `;
 
+
 export const UPDATE_CARD_QUANTITY = gql`
   mutation Mutation(
     $deckId: ID! 

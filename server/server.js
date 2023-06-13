@@ -53,7 +53,7 @@ app.post('/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       line_items,
       mode: 'payment',
-      success_url: `https://palette-town.herokuapp.com/marketplace`,
+      success_url: `https://palette-town.herokuapp.com/success`,
       cancel_url: `https://palette-town.herokuapp.com/checkout`,
     });
 

@@ -74,13 +74,12 @@ const Checkout = () => {
   }, [username, client]);
 
   const handleCheckout = async () => {
-    await removeAllItemsFromCart();
 
     // Load Stripe.js
     const stripe = await stripePromise;
   
     // Call your backend server to create a Checkout Session
-    const response = await fetch("http://localhost:3001/create-checkout-session", {
+    const response = await fetch("https://palette-town.herokuapp.com/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

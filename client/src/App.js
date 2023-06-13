@@ -73,6 +73,7 @@ function App() {
             <Route path="/listing/:id" element={<MarketItem />} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Checkout" element={<Checkout />} />
+            <Route path="/success" element={<Contact />} />
 
           </Routes>
         </div>

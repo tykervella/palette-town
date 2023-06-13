@@ -284,6 +284,16 @@ const resolvers = {
     removeListing: async (parent, { listingId }) => {
       const listing = await Listing.findOneAndDelete({ _id: listingId });
     
+      if (!listing) {
+        throw new Error("Listing not found");
+      }
+    
+      // Remove the listing from all users' carts
+      await User.updateMany(
+        { },  // An empty condition to update all documents
+        { $pull: { cart: listingId } }  // Remove the listingId from the cart array
+      );
+    
       return listing;
     },
     

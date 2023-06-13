@@ -3,10 +3,13 @@ const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 require('dotenv').config();
+const cors = require('cors');
+
 
 
 
 const stripe = require('stripe')(process.env.SK_TEST_KEY);
+
 
 
 const { typeDefs, resolvers } = require('./schemas');
@@ -20,6 +23,7 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

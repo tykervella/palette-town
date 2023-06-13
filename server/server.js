@@ -23,7 +23,9 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://palette-town.herokuapp.com/'
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -34,32 +36,36 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.post('/create-checkout-session', async (req, res) => {
-  const cart = req.body.cart;
-  const line_items = cart.map(item => ({
-    price_data: {
-      currency: 'usd',
-      product_data: {
-        name: item.cardName,
+  try {
+    const cart = req.body.cart;
+    const line_items = cart.map(item => ({
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: item.cardName,
+        },
+        unit_amount: item.price * 100, // Stripe requires amount in cents
       },
-      unit_amount: item.price * 100, // Stripe requires amount in cents
-    },
-    quantity: 1, // adjust this if you have quantity feature in your cart
-  }));
+      quantity: 1, // adjust this if you have quantity feature in your cart
+    }));
 
-  const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card'],
-    line_items,
-    mode: 'payment',
-    success_url: `http://localhost:3000/checkout`,
-    cancel_url: `http://localhost:3001/checkout`,
-  });
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items,
+      mode: 'payment',
+      success_url: `https://palette-town.herokuapp.com/marketplace`,
+      cancel_url: `https://palette-town.herokuapp.com/checkout`,
+    });
 
-  res.json({ id: session.id });
+    res.json({ id: session.id });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred while creating the checkout session' });
+  }
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+
+
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
@@ -77,3 +83,6 @@ const startApolloServer = async () => {
 // Call the async function to start the server
 startApolloServer();
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});

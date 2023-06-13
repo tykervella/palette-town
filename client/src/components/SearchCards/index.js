@@ -179,13 +179,10 @@ const SearchCards = ({ onSearch }) => {
                 <option value="Restored" className="">
                   Restored
                 </option>
-                <option value="Single-Strike" className="">
-                  Single Strike
-                </option>
-                <option value="Stage-1" className="">
+                <option value="Stage1" className="">
                   Stage 1
                 </option>
-                <option value="Stage-2" className="">
+                <option value="Stage2" className="">
                   Stage 2
                 </option>
                 <option value="TAG-TEAM" className="">

@@ -22,7 +22,7 @@ import CreateListing from './pages/CreateListing'
 import CreatePost from './pages/CreatePost'
 import Post from './pages/Post'
 import MarketItem from './pages/MarketItem';
-import Success from './success';
+import Success from './pages/Success';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

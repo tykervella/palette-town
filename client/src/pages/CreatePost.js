@@ -238,7 +238,7 @@ const CreatePost = () => {
 
       const newPost = response.data.addPost._id
       console.log(newPost)
-      navigate("/profile")
+      navigate(`/post/${newPost}`)
       // const color1 = response.data.addPost.color1
       // console.log(newPost, modifiedCardTypes, color1)
     } catch (error) {

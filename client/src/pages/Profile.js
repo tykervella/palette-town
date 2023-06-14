@@ -118,9 +118,9 @@ const Profile = () => {
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </div>
-              <button className="bg-[#FFEC99] hover:bg-[#AFD7CA] text-xl text-[#0B3C49] py-1 px-3 rounded">
+              {/* <button className="bg-[#FFEC99] hover:bg-[#AFD7CA] text-xl text-[#0B3C49] py-1 px-3 rounded">
                 Update Profile
-              </button>
+              </button> */}
             </div>
           </Col>
         </Row>

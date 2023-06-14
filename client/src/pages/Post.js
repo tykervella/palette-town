@@ -95,7 +95,7 @@ const Post = () => {
       <Row>
         <Col xs={12} className='bg-[#AFD7CA] text-center rounded p-2 shadow-lg'>
           <div className='border-3 rounded border-[#0B3C49]'>
-            <h1 className='mt-3'>{postName}</h1>
+            <h1 className='mt-3 font-bold'>{postName}</h1>
             <p className='mt-4 text-[#0B3C49]'>{postText}</p>
           </div>
         </Col>
@@ -142,16 +142,16 @@ const Post = () => {
           <Row className="flex-row justify-content-center rounded bg-[#AFD7CA] p-2 mt-4">
             <div className='border-3 rounded border-[#0B3C49] p-2'>
               <ul className='text-2xl -mb-1 font-bold'>Users who Caught this Post:</ul>
-                
-                <div className='ml-10 text-gray-500'>
-                  {caughtUsers && caughtUsers.length > 0 && caughtUsers.map((user, index) => (
-                    <li key={index} className="list-none flex items-center">
-                      {user.username}
-                    </li>
-                  ))}
-                </div>
 
-              
+              <div className='ml-10 text-gray-500'>
+                {caughtUsers && caughtUsers.length > 0 && caughtUsers.map((user, index) => (
+                  <li key={index} className="list-none flex items-center m-2">
+                    <span className='mr-2'><MdCatchingPokemon /></span>{user.username}
+                  </li>
+                ))}
+              </div>
+
+
 
             </div>
           </Row>

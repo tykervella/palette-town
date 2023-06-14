@@ -57,7 +57,7 @@ const Login = () => {
     <Container className="mb-5">
       <Row>
         {/* left column */}
-        <Col md={8} className="d-none d-md-block">
+        <Col md={8}>
           <div className="loginLogo rounded-3xl shadow-xl d-flex flex-column align-items-center justify-content-center">
             <div className="mb-4 text-center pt-5 font-bold">
               <h1 className="pt-10 text-4xl mb-2 font-bold">
@@ -72,7 +72,7 @@ const Login = () => {
                 </p>
               </div>
               <button className="mt-4 btn-block bg-[#0B3C49] hover:bg-[#4B957E] text-white py-3 px-6 rounded-lg text-xl">
-                <Link to="/signup" className=" text-white text-decoration-none">
+                <Link to="/signup" className="text-white text-decoration-none">
                   Sign Up
                 </Link>
               </button>
@@ -88,8 +88,7 @@ const Login = () => {
           </h2>
           {data ? (
             <p>
-              Success! You may now head{" "}
-              <Link to="/">back to the homepage.</Link>
+              Success! You may now head <Link to="/">back to the homepage.</Link>
             </p>
           ) : (
             <div className="d-flex flex-column justify-content-center align-items-center">
@@ -138,9 +137,9 @@ const Login = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-center">
+                <div className="d-flex justify-center"> {/* Added d-flex class for flexbox */}
                   <button
-                    className="mt-4 mb-4 text-black btn-block bg-[#FFEC99] hover:bg-[#4B957E] font-bold py-3 px-6 rounded-lg text-lg"
+                    className="mt-4 mb-4 text-black bg-[#FFEC99] hover:bg-[#4B957E] font-bold py-3 px-6 rounded-lg text-lg"
                     style={{ cursor: "pointer", minWidth: "120px" }}
                     type="submit"
                   >
@@ -159,6 +158,7 @@ const Login = () => {
         </Col>
       </Row>
     </Container>
+
   );
 };
 

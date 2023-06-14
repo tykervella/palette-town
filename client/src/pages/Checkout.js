@@ -108,7 +108,7 @@ const Checkout = () => {
 
   return (
     <Container className="mt-5 text-center rounded shadow-lg mb-4" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
-      <h1 className="mb-10 p-4">Checkout</h1>
+      <h1 className="mb-10 p-4 underline">Checkout</h1>
 
       {cartItems.length > 0 ? (
         <Row className="cart-items-container">
